@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EAD_Assignment3.Models.donorInfo>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+
+</div>
+
+<h3>List of  Availbale Donors</h3>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Bloog Group</th>
+    </tr>
+    @foreach(var info in Model)
+    { 
+        <tr>
+            <td>@info.Name</td>
+            <td>@info.Contact</td>
+            <td>@info.BloodGroup</td>
+
+            <td>
+                <a href="/Home/Edit/@info.Id">Edit</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<br />
+<p>-----------------------------------------------------------------</p>
+<br />
+
+<h3>Add Donor</h3>
+<form id="ContactForm"  action="/Home/Add" method="get">
+    <div>
+        <div class="wrapper">
+            <strong>Name:</strong>
+            <div class="bg"><input type="text" name="name" class="input"></div>
+        </div>
+        <div class="wrapper">
+            <strong>Contact:</strong>
+            <div class="bg"><input type="text" name ="contact" class="input">	</div>
+        </div>
+        <div class="textarea_box">
+            <strong>Blood Group:</strong>
+            <div class="bg"><input type="text" name="bloodGroup" class="input" />		</div>
+        </div>
+        <a href="#" class="button" onClick="document.getElementById('ContactForm').submit()"><span><span>Add</span></span></a>
+    </div>
+</form>

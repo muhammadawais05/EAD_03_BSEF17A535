@@ -1,0 +1,29 @@
+﻿@model  EAD_Assignment3.Models.donorInfo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h3>Edit Contact Number</h3>
+        <form id="ContactForm" action="/Home/EditDone/@Model.Id" method="get">
+            <div>
+                <div class="wrapper">
+                    <strong>Contact:</strong>
+                    <div class="bg"><input type="text" name="contact" value="@Model.Contact" class="input"></div>
+                </div>
+                <a href="#" class="button" onClick="document.getElementById('ContactForm').submit()"><span><span>Submit Changes</span></span></a>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
